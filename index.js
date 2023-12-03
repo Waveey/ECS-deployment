@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the EC2-AUTOMATED-COPY");
+  res.send("Welcome to the EC2-BABY");
 });
 
 app.get("/info", (req, res) => {
