@@ -9,11 +9,11 @@ on:
 env:
   AWS_REGION: us-east-1                  # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: docker-test           # set this to your Amazon ECR repository name
-  ECS_SERVICE: service                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: Cluster                # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: TD-1-task-definition.json # set this to the path to your Amazon ECS task definition
+  ECS_SERVICE: SERVICE-EC2                # set this to your Amazon ECS service name
+  ECS_CLUSTER: EC2-CLUSTER               # set this to your Amazon ECS cluster name
+  ECS_TASK_DEFINITION: TD-2-task-definition.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: node-app           # set this to the name of the container in the
+  CONTAINER_NAME: NODE-EC2           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 jobs:
@@ -55,8 +55,8 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
-          task-definition: TD-1-task-definition.json
-          container-name: node-app
+          task-definition: TD-2-task-definition.json
+          container-name: NODE-EC2  
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
