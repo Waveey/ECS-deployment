@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the NEW-PAGE");
+  res.send("Welcome to the AUTOMATED-COPY");
 });
 
 app.get("/info", (req, res) => {
